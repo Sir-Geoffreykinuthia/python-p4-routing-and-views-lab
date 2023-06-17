@@ -16,13 +16,10 @@ def print_route(parameter):
     print(parameter)
     return parameter
 
-# the implementation is not working i dont know why 
-# because the test is expecting the response to include the number 10 but the actual response includes the number 10 twice at the end 
-# this test is yet to pass will work on it later
+
 @app.route('/count/<int:parameter>')
 def count_route(parameter):
-    numbers = '\n'.join(str(i) for i in range(parameter)) 
-    numbers += f"\n{parameter - 1}"  
+    numbers = '\n'.join(str(i) for i in range(parameter + 1)) 
     return numbers
 
 
